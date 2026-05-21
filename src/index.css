@@ -15,22 +15,29 @@
   font-display: swap;
 }
 
-/* 2. 디자인 토큰 (CSS variables) */
+/* 2. 디자인 토큰 (CSS variables) update*/
 :root {
   /* Colors */
-  --color-bg-pure: #FFFFFF;                  /* 누런 기를 완전히 제거한 깨끗한 퓨어 화이트 */
-  --color-lavender-light: #F6F4FD;            /* 부드러운 라벤더 서브 배경 */
-  --color-lavender-medium: #DCD3F7;           /* 라벤더 중간 강조색 */
-  --color-lavender-deep: #8E7CEF;             /* 라벤더 포인트 컬러 */
-  --color-navy-deep: #0D1127;                 /* 프리미엄 네이비 헤드라인 텍스트 */
-  --color-navy-mute: #4B5373;                 /* 본문 텍스트용 차분한 네이비 그레이 */
-  --color-navy-light: #F0F2FA;                /* 매우 맑은 네이비 틴트 */
-  
+  --color-bg-pure: #FFFFFF;
+  /* 누런 기를 완전히 제거한 깨끗한 퓨어 화이트 */
+  --color-lavender-light: #F6F4FD;
+  /* 부드러운 라벤더 서브 배경 */
+  --color-lavender-medium: #DCD3F7;
+  /* 라벤더 중간 강조색 */
+  --color-lavender-deep: #8E7CEF;
+  /* 라벤더 포인트 컬러 */
+  --color-navy-deep: #0D1127;
+  /* 프리미엄 네이비 헤드라인 텍스트 */
+  --color-navy-mute: #4B5373;
+  /* 본문 텍스트용 차분한 네이비 그레이 */
+  --color-navy-light: #F0F2FA;
+  /* 매우 맑은 네이비 틴트 */
+
   /* Aurora Hologram Gradients */
   --gradient-aurora: linear-gradient(135deg, #FF9ECA 0%, #B8A6FF 50%, #7CE2FF 100%);
   --gradient-aurora-glow: linear-gradient(135deg, rgba(255, 158, 202, 0.4) 0%, rgba(184, 166, 255, 0.4) 50%, rgba(124, 226, 255, 0.4) 100%);
   --gradient-lavender-navy: linear-gradient(135deg, #8E7CEF 0%, #0D1127 100%);
-  
+
   /* Glassmorphism Presets */
   --glass-bg: rgba(255, 255, 255, 0.45);
   --glass-bg-hover: rgba(255, 255, 255, 0.65);
@@ -38,17 +45,17 @@
   --glass-border-hover: rgba(255, 255, 255, 0.8);
   --glass-shadow: 0 20px 40px rgba(13, 17, 39, 0.06);
   --glass-shadow-hover: 0 30px 60px rgba(13, 17, 39, 0.12);
-  
+
   /* Typography */
   --font-serif: 'KoPubWorldDotum', sans-serif;
   --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-display: 'Outfit', sans-serif;
   --font-jalnan: 'yg-jalnan', sans-serif;
-  
+
   /* Layout Options */
   --max-width: 1200px;
   --header-height: 80px;
-  
+
   /* Custom Cursor Area */
   --cursor-glow-x: 0px;
   --cursor-glow-y: 0px;
@@ -63,7 +70,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--color-bg-pure);
@@ -94,7 +102,12 @@ html, body {
 }
 
 /* 4. 공통 컴포넌트 타이포그래피 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-navy-deep);
   font-weight: 700;
   line-height: 1.25;
@@ -131,14 +144,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 1; /* 콘텐츠보다 뒤, 배경보다는 앞 */
-  background: radial-gradient(
-    400px circle at var(--cursor-glow-x) var(--cursor-glow-y),
-    rgba(184, 166, 255, 0.15) 0%,
-    rgba(255, 158, 202, 0.1) 40%,
-    rgba(124, 226, 255, 0.05) 70%,
-    transparent 100%
-  );
+  z-index: 1;
+  /* 콘텐츠보다 뒤, 배경보다는 앞 */
+  background: radial-gradient(400px circle at var(--cursor-glow-x) var(--cursor-glow-y),
+      rgba(184, 166, 255, 0.15) 0%,
+      rgba(255, 158, 202, 0.1) 40%,
+      rgba(124, 226, 255, 0.05) 70%,
+      transparent 100%);
   transition: background 0.1s ease-out;
 }
 
@@ -173,12 +185,10 @@ h1, h2, h3, h4, h5, h6 {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
   transition: 0.5s;
 }
 
