@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Header.css';
+import logoIcon from '../assets/figures/hero.png';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,6 +24,7 @@ export default function Header() {
         
         {/* 브랜드 로고 */}
         <a href="#hero" className="header-logo">
+          <img src={logoIcon} alt="캐릭터 로고" className="logo-icon" />
           <span className="logo-text">DREAM DRAWING</span>
         </a>
 
