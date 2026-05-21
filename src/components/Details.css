@@ -63,7 +63,8 @@
   flex: 1;
   height: 480px;
   border-radius: 32px;
-  overflow: hidden; /* 영역 밖으로 나가는 확대 이미지 마스킹 크롭 */
+  overflow: hidden;
+  /* 영역 밖으로 나가는 확대 이미지 마스킹 크롭 */
 }
 
 .detail-crop-area {
@@ -144,7 +145,8 @@
   height: 100%;
   border-radius: 50%;
   border: 3px solid rgba(184, 166, 255, 0.8);
-  pointer-events: auto; /* 터치 및 클릭 허용 */
+  pointer-events: auto;
+  /* 터치 및 클릭 허용 */
   cursor: pointer;
   z-index: 1;
   animation: pulseRing 2.4s infinite ease-out;
@@ -155,6 +157,7 @@
     transform: scale(0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(2.2);
     opacity: 0;
@@ -164,9 +167,10 @@
 /* 5. IN-03 글래스모피즘 툴팁 말풍선 (Holographic Popups) */
 .glass-tooltip-bubble {
   position: absolute;
-  bottom: 45px; /* 핀 위에 공중부양 */
+  bottom: 45px;
+  /* 핀 위에 공중부양 */
   left: 50%;
-  transform: translateX(-50%) translateY(12px) scale(0.95);
+  transform: translateX(-30%) translateY(12px) scale(0.95);
   width: 280px;
   padding: 20px 24px;
   z-index: 10;
@@ -175,7 +179,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: 
+  transition:
     opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
     transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
     visibility 0.4s ease;
@@ -186,13 +190,13 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0) scale(1);
+  transform: translateX(-30%) translateY(0) scale(1);
 }
 
 /* 개별 핀에 직접 호버 시 해당 툴팁을 조금 더 키우고 위로 올려 강조 효과 극대화 */
 .hotspot-pin:hover .glass-tooltip-bubble {
   z-index: 15;
-  transform: translateX(-50%) translateY(-4px) scale(1.05);
+  transform: translateX(-30%) translateY(-4px) scale(1.05);
   box-shadow: 0 12px 32px rgba(142, 124, 239, 0.5);
   border-color: var(--color-lavender-deep);
 }
@@ -215,7 +219,7 @@
   position: absolute;
   bottom: -8px;
   left: 50%;
-  transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-30%) rotate(45deg);
   width: 16px;
   height: 16px;
   background: var(--glass-bg);
@@ -284,7 +288,8 @@
 /* 7. 반응형 대응 (1024px 이하 태블릿 및 모바일용) */
 @media (max-width: 1024px) {
   .detail-row {
-    flex-direction: column !important; /* 모바일/태블릿에서는 무조건 비주얼이 위, 텍스트가 아래 */
+    flex-direction: column !important;
+    /* 모바일/태블릿에서는 무조건 비주얼이 위, 텍스트가 아래 */
     gap: 40px;
   }
 

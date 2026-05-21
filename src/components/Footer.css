@@ -32,7 +32,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-30%, -30%);
   width: 450px;
   height: 250px;
   background: var(--gradient-aurora-glow);
@@ -112,7 +112,8 @@
 .precautions-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #D32F2F; /* 차분한 레드 경고색 */
+  color: #D32F2F;
+  /* 차분한 레드 경고색 */
   margin-bottom: 16px;
   text-align: left;
 }
@@ -213,7 +214,8 @@
 
 .contact-icon {
   flex-shrink: 0;
-  color: var(--color-lavender-deep); /* 톤온톤 매칭 브랜드 색상 */
+  color: var(--color-lavender-deep);
+  /* 톤온톤 매칭 브랜드 색상 */
   opacity: 0.85;
 }
 
@@ -259,7 +261,8 @@
   }
 
   .footer-bottom-grid {
-    grid-template-columns: 1fr; /* 1열 세로 정렬 */
+    grid-template-columns: 1fr;
+    /* 1열 세로 정렬 */
     gap: 40px;
   }
 
