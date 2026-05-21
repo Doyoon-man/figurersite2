@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Footer Section 스타일 - Footer.css
+   ========================================================================== */
+
+.footer-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-bg-pure);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* 1. 최종 메인 CTA 구역 */
+.footer-cta-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 4% 60px;
+}
+
+.cta-glass-box {
+  position: relative;
+  width: 100%;
+  padding: 80px 40px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 40px !important;
+}
+
+/* CTA 박스 내부의 강력한 오로라 광채 백라이트 */
+.cta-bg-aurora-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 250px;
+  background: var(--gradient-aurora-glow);
+  filter: blur(90px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 10s infinite alternate ease-in-out;
+}
+
+.cta-pre {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--color-lavender-deep);
+  margin-bottom: 24px;
+  z-index: 2;
+}
+
+.cta-title {
+  position: relative;
+  font-size: 2.8rem;
+  line-height: 1.35;
+  color: var(--color-navy-deep);
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.cta-desc {
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-navy-mute);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  z-index: 2;
+}
+
+.cta-btn-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.main-cta-button {
+  padding: 20px 48px;
+  font-size: 1.15rem;
+  box-shadow: 0 15px 40px rgba(142, 124, 239, 0.4);
+}
+
+/* 2. 유의사항 및 하단 법인 정보 구역 */
+.footer-info-container {
+  width: 100%;
+  background-color: var(--color-lavender-light);
+  padding: 80px 4% 40px;
+  border-top: 1px solid rgba(13, 17, 39, 0.05);
+}
+
+.footer-max-width {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 유의사항 박스 */
+.precautions-box {
+  width: 100%;
+  padding: 32px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(13, 17, 39, 0.08);
+}
+
+.precautions-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #D32F2F; /* 차분한 레드 경고색 */
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.precautions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.precautions-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-navy-mute);
+}
+
+.precautions-list li::before {
+  content: '•';
+  position: absolute;
+  left: 5px;
+  color: var(--color-lavender-deep);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(13, 17, 39, 0.08);
+  margin-bottom: 60px;
+}
+
+/* 소셜 및 고객센터 그리드 */
+.footer-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.brand-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--color-navy-deep);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.brand-sub {
+  font-size: 0.9rem;
+  color: var(--color-navy-mute);
+}
+
+.link-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-navy-deep);
+  margin-bottom: 20px;
+}
+
+.link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-list a {
+  font-size: 0.95rem;
+  color: var(--color-navy-mute);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-list a:hover {
+  color: var(--color-lavender-deep);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--color-navy-mute);
+  margin-bottom: 12px;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  color: var(--color-lavender-deep); /* 톤온톤 매칭 브랜드 색상 */
+  opacity: 0.85;
+}
+
+
+/* 카피라이트 */
+.footer-copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(75, 83, 115, 0.6);
+  border-top: 1px solid rgba(13, 17, 39, 0.05);
+  padding-top: 30px;
+}
+
+/* 3. 반응형 튜닝 (1024px 이하 태블릿 및 모바일용) */
+@media (max-width: 1024px) {
+  .cta-title {
+    font-size: 2.2rem;
+  }
+
+  .footer-bottom-grid {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-glass-box {
+    padding: 50px 20px;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+
+  .cta-desc {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .main-cta-button {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+
+  .footer-bottom-grid {
+    grid-template-columns: 1fr; /* 1열 세로 정렬 */
+    gap: 40px;
+  }
+
+  .precautions-box {
+    padding: 24px 16px;
+    margin-bottom: 40px;
+  }
+}

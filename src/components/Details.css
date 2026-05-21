@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Details Section 스타일 - Details.css
+   ========================================================================== */
+
+.details-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 4%;
+  background-color: var(--color-bg-pure);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.details-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 1. 섹션 헤더 */
+.details-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 90px;
+}
+
+.details-main-title {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.details-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-navy-mute);
+}
+
+/* 2. 지그재그 리스트 구조 */
+.details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.row-normal {
+  flex-direction: row;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* 3. 하이테크 크롭 줌 비주얼 패널 */
+.detail-visual-wrapper {
+  position: relative;
+  flex: 1;
+  height: 480px;
+  border-radius: 32px;
+  overflow: hidden; /* 영역 밖으로 나가는 확대 이미지 마스킹 크롭 */
+}
+
+.detail-crop-area {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-lavender-light);
+}
+
+.detail-base-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+/* 기본 상태: 원본 크기 (줌 없음) */
+.zoom-face .detail-base-img,
+.zoom-dress .detail-base-img {
+  transform: scale(1) translate(0%, 0%);
+}
+
+/* 호버 시에만 줌업 효과 */
+.detail-visual-wrapper:hover .zoom-face .detail-base-img {
+  transform: scale(2.6) translate(3%, 22%);
+}
+
+.detail-visual-wrapper:hover .zoom-dress .detail-base-img {
+  transform: scale(2.1) translate(-2%, -5%);
+}
+
+/* 4. 맥동하는 핫스팟 핀 (Hotspot Pins) */
+.hotspot-pin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* 핀 내부 코어 */
+.hotspot-core-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gradient-aurora);
+  border: 2px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(142, 124, 239, 0.4);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.plus-sign {
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hotspot-pin:hover .hotspot-core-dot {
+  transform: scale(1.15);
+}
+
+/* 맥동하는 외부 펄스 링 */
+.hotspot-pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid rgba(184, 166, 255, 0.8);
+  pointer-events: auto; /* 터치 및 클릭 허용 */
+  cursor: pointer;
+  z-index: 1;
+  animation: pulseRing 2.4s infinite ease-out;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* 5. IN-03 글래스모피즘 툴팁 말풍선 (Holographic Popups) */
+.glass-tooltip-bubble {
+  position: absolute;
+  bottom: 45px; /* 핀 위에 공중부양 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  padding: 24px;
+  z-index: 10;
+  text-align: left;
+  border-radius: 20px;
+  animation: tooltipFadeUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* 닫기 버튼 */
+.tooltip-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--color-navy-mute);
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip-close-btn:hover {
+  opacity: 1;
+}
+
+.tooltip-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy-deep);
+  margin-bottom: 8px;
+  padding-right: 12px;
+}
+
+.tooltip-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-navy-mute);
+}
+
+/* 말풍선 하단 뾰족한 화살표 꼬리표 */
+.tooltip-arrow {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 16px;
+  height: 16px;
+  background: var(--glass-bg);
+  border-right: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: -1;
+}
+
+@keyframes tooltipFadeUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 6. 우측/좌측 스펙 텍스트 설명 */
+.detail-text-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.detail-num-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-lavender-deep);
+  margin-bottom: 14px;
+}
+
+.detail-title {
+  font-size: 2.2rem;
+  color: var(--color-navy-deep);
+  margin-bottom: 20px;
+}
+
+.detail-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-navy-mute);
+  margin-bottom: 30px;
+}
+
+/* 스펙 블릿 리스트 */
+.detail-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bullet-icon {
+  color: var(--color-lavender-deep);
+  font-size: 0.95rem;
+}
+
+.bullet-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-navy-deep);
+}
+
+/* 7. 반응형 대응 (1024px 이하 태블릿 및 모바일용) */
+@media (max-width: 1024px) {
+  .detail-row {
+    flex-direction: column !important; /* 모바일/태블릿에서는 무조건 비주얼이 위, 텍스트가 아래 */
+    gap: 40px;
+  }
+
+  .detail-visual-wrapper {
+    width: 100%;
+    height: 400px;
+  }
+
+  .detail-text-wrapper {
+    width: 100%;
+  }
+
+  .detail-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .details-section {
+    padding: 80px 4%;
+  }
+
+  .details-main-title {
+    font-size: 2.2rem;
+  }
+
+  .detail-visual-wrapper {
+    height: 300px;
+  }
+
+  .glass-tooltip-bubble {
+    width: 240px;
+    padding: 16px;
+  }
+
+  .tooltip-title {
+    font-size: 0.95rem;
+  }
+
+  .tooltip-text {
+    font-size: 0.8rem;
+  }
+}

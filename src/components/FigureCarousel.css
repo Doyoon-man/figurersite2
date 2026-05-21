@@ -1,0 +1,389 @@
+/* ==========================================================================
+   FigureCarousel — Youtooz 스타일 무한 컨베이어 벨트 캐러셀 (Premium Edition)
+   ========================================================================== */
+
+/* ── 섹션 전체 배경 ── */
+.figure-carousel-section {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  padding: 54px 0 62px;
+
+  /* youtooz처럼 밝은 라벤더 틴트 배경 */
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184, 166, 255, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 100%, rgba(255, 158, 202, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(124, 226, 255, 0.10) 0%, transparent 60%),
+    linear-gradient(180deg, #faf9ff 0%, #f3efff 40%, #f0ecff 60%, #f5f3ff 100%);
+}
+
+/* 배경 장식 원 (youtooz처럼 둥둥 떠있는 느낌) */
+.figure-carousel-section::before,
+.figure-carousel-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.figure-carousel-section::before {
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(184, 166, 255, 0.15) 0%, transparent 70%);
+  animation: floatOrb1 12s ease-in-out infinite alternate;
+}
+
+.figure-carousel-section::after {
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(255, 158, 202, 0.12) 0%, transparent 70%);
+  animation: floatOrb2 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.1); }
+}
+
+@keyframes floatOrb2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-30px, -20px) scale(1.08); }
+}
+
+/* ── 섹션 헤더 ── */
+.carousel-header {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-lavender-deep, #8e7cef);
+  background: rgba(142, 124, 239, 0.08);
+  border: 1px solid rgba(142, 124, 239, 0.22);
+  border-radius: 50px;
+  padding: 7px 20px 7px 16px;
+  /* 미세한 광채 */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 2px 12px rgba(142, 124, 239, 0.1);
+}
+
+/* ── 트랙 래퍼 (마스크 포함) ── */
+.carousel-track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 18px;
+  /* CSS mask로 좌우 페이드 처리 (더 부드럽고 퍼포먼스가 좋음) */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.carousel-track-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* 좌우 페이드 오버레이 (mask 미지원 브라우저 폴백) */
+.carousel-gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.carousel-gradient--left {
+  left: 0;
+  background: linear-gradient(to right, #f3efff 0%, transparent 100%);
+}
+
+.carousel-gradient--right {
+  right: 0;
+  background: linear-gradient(to left, #f3efff 0%, transparent 100%);
+}
+
+/* ── 무한 스크롤 트랙 ── */
+.carousel-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  will-change: transform;
+  padding: 12px 0 16px; /* 카드 그림자가 잘리지 않도록 */
+}
+
+/* 호버 시 전체 줄 정지 */
+.carousel-track-wrapper:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+.carousel-track--left {
+  animation: scrollLeft 38s linear infinite;
+}
+
+.carousel-track--right {
+  animation: scrollRight 34s linear infinite;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% / 3)); }
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(calc(-100% / 3)); }
+  to   { transform: translateX(0); }
+}
+
+/* ── 개별 카드 ── */
+.figure-card {
+  flex-shrink: 0;
+  width: 210px;
+  cursor: pointer;
+  user-select: none;
+  /* 카드 자체에서 호버 처리 */
+}
+
+.figure-card__inner {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+
+  /* 카드 테두리: 오로라 그라디언트 border trick */
+  border: 1.5px solid rgba(184, 166, 255, 0.25);
+
+  box-shadow:
+    0 2px 8px rgba(13, 17, 39, 0.04),
+    0 6px 24px rgba(142, 124, 239, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition:
+    transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.38s ease,
+    border-color 0.3s ease;
+  will-change: transform, box-shadow;
+  position: relative;
+}
+
+/* 호버 시 카드 상승 + 오로라 광채 */
+.figure-card:hover .figure-card__inner {
+  transform: translateY(-10px) scale(1.04);
+  border-color: rgba(184, 166, 255, 0.5);
+  box-shadow:
+    0 20px 50px rgba(142, 124, 239, 0.25),
+    0 8px 20px rgba(255, 158, 202, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* 호버 shimmer 효과 */
+.figure-card__inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.figure-card:hover .figure-card__inner::after {
+  opacity: 1;
+}
+
+/* ── 이미지 영역 ── */
+.figure-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  /* 이미지가 없을 때 보여줄 그라디언트 배경 */
+  background: linear-gradient(160deg, #f0ecff 0%, #e8e2ff 50%, #f5f0ff 100%);
+}
+
+.figure-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+
+.figure-card:hover .figure-card__img {
+  transform: scale(1.07);
+}
+
+/* ── 뱃지 ── */
+.figure-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 4;
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 4px 9px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.figure-card:hover .figure-card__badge {
+  transform: scale(1.05);
+}
+
+.figure-card__badge--new {
+  background: rgba(142, 124, 239, 0.92);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(142, 124, 239, 0.55);
+}
+
+.figure-card__badge--limited {
+  background: rgba(255, 100, 160, 0.9);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(255, 100, 160, 0.5);
+}
+
+.figure-card__badge--hot {
+  background: linear-gradient(135deg, #ff6440, #ff9e4f);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(255, 100, 64, 0.45);
+}
+
+.figure-card__badge--sold-out {
+  background: rgba(80, 80, 100, 0.82);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.06em;
+}
+
+/* ── 카드 하단 정보 영역 ── */
+.figure-card__info {
+  padding: 14px 16px 18px;
+  background: #fff;
+  position: relative;
+}
+
+/* 정보 영역 상단 미세 구분선 */
+.figure-card__info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(184, 166, 255, 0.3), transparent);
+}
+
+.figure-card__name {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-navy-deep, #0d1127);
+  margin: 0 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.figure-card:hover .figure-card__name {
+  color: var(--color-lavender-deep, #8e7cef);
+}
+
+.figure-card__sub {
+  font-size: 0.72rem;
+  color: var(--color-navy-mute, #6b6f8a);
+  margin: 0;
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  letter-spacing: 0.02em;
+}
+
+/* 별점 스타 (장식) */
+.figure-card__stars {
+  display: flex;
+  gap: 2px;
+  margin-top: 6px;
+}
+
+.figure-card__star {
+  font-size: 0.6rem;
+  color: #f6c90e;
+  line-height: 1;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 1024px) {
+  .figure-carousel-section {
+    padding: 44px 0 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .figure-card {
+    width: 168px;
+  }
+
+  .carousel-track {
+    gap: 14px;
+  }
+
+  .figure-carousel-section {
+    padding: 36px 0 44px;
+  }
+
+  .carousel-track-wrapper {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+}

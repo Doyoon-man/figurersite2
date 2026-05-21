@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Header Section 스타일 - Header.css
+   ========================================================================== */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 스크롤 시 발동되는 미려한 하이브리드 글래스 */
+.app-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(13, 17, 39, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(13, 17, 39, 0.02);
+}
+
+.header-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 1. 로고 */
+.header-logo {
+  text-decoration: none;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--color-navy-deep);
+}
+
+/* 2. 네비게이션 메뉴 */
+.header-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-navy-mute);
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-lavender-deep);
+}
+
+/* 호버 시 밑줄 오로라 확장 애니메이션 */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-aurora);
+  transition: width 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* 3. 예약 숏컷 */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-cta-btn {
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-lavender-deep);
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.header-cta-btn:hover {
+  background: var(--gradient-aurora);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(184, 166, 255, 0.3);
+}
+
+/* 4. 모바일 반응형 */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none; /* 모바일 가독성을 위해 메뉴 숨김 및 스크롤 유도 */
+  }
+}

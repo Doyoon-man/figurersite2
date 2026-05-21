@@ -1,0 +1,283 @@
+/* ==========================================================================
+   How It Works Section 스타일 - HowItWorks.css
+   ========================================================================== */
+
+.how-it-works-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 4%;
+  background-color: var(--color-bg-pure);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.how-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 1. 섹션 헤더 디자인 */
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-subtitle {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-lavender-deep);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.section-main-title {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--color-navy-mute);
+  line-height: 1.6;
+}
+
+/* 2. 뒷배경 3D 플로팅 구체 (Floating Spheres) */
+.floating-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.45;
+}
+
+.sphere-1 {
+  top: 15%;
+  left: 10%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #B8A6FF 0%, transparent 80%);
+  animation: floatSphere1 12s infinite alternate ease-in-out;
+}
+
+.sphere-2 {
+  top: 50%;
+  right: 5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #FF9ECA 0%, transparent 80%);
+  animation: floatSphere2 16s infinite alternate ease-in-out;
+}
+
+.sphere-3 {
+  bottom: 10%;
+  left: 20%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #7CE2FF 0%, transparent 80%);
+  animation: floatSphere1 14s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatSphere1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(-20px, 30px) scale(0.9);
+  }
+}
+
+@keyframes floatSphere2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 50px) scale(0.95);
+  }
+  100% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+}
+
+/* 3. 세로 타임라인 & 스텝 카드 */
+.timeline-stepping {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  z-index: 2;
+}
+
+/* 중앙 세로 기둥 라인 */
+.timeline-bar {
+  position: absolute;
+  top: 0;
+  left: 30px; /* 아이콘 중앙 정렬용 */
+  width: 4px;
+  height: 100%;
+  background: var(--color-navy-light);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.timeline-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-lavender-medium), var(--color-lavender-deep));
+  transform-origin: top;
+  border-radius: 2px;
+}
+
+/* 개별 스텝 컴포넌트 */
+.step-card-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 80px;
+  opacity: 0;
+  transform: translateY(50px);
+  /* 스크롤 올릴 때 (exit): 빠르게 사라짐 */
+  transition: opacity 0.45s ease-in, transform 0.45s ease-in;
+}
+
+/* Intersection Observer 뷰포트 감지 후 활성화 */
+/* 스크롤 내릴 때 (enter): 부드럽게 나타남 */
+.step-card-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 타임라인 위의 버블 지표 */
+.step-indicator {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.step-num-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg-pure);
+  border: 3px solid var(--color-lavender-deep);
+  border-radius: 50%;
+  color: var(--color-navy-deep);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(142, 124, 239, 0.2);
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s ease;
+}
+
+.step-card-wrapper.in-view .step-num-bubble {
+  background: var(--color-lavender-deep);
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+/* 글래스 카드 본체 */
+.step-glass-card {
+  width: 100%;
+  padding: 40px;
+}
+
+.step-meta {
+  margin-bottom: 12px;
+}
+
+.step-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-lavender-deep);
+  letter-spacing: 1.5px;
+}
+
+.step-card-title {
+  font-size: 1.8rem;
+  color: var(--color-navy-deep);
+  margin-bottom: 20px;
+}
+
+.step-card-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-navy-mute);
+  margin-bottom: 24px;
+}
+
+.step-card-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(13, 17, 39, 0.08);
+  margin-bottom: 18px;
+}
+
+.step-card-sub {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-navy-mute);
+}
+
+/* 4. 반응형 레이아웃 대응 (768px 이하 모바일용) */
+@media (max-width: 768px) {
+  .how-it-works-section {
+    padding: 80px 5%;
+  }
+
+  .section-main-title {
+    font-size: 2.2rem;
+  }
+
+  .timeline-stepping {
+    gap: 40px;
+  }
+
+  .timeline-bar {
+    left: 20px;
+  }
+
+  .step-card-wrapper {
+    padding-left: 55px;
+  }
+
+  .step-indicator {
+    left: 2px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .step-glass-card {
+    padding: 30px 20px;
+  }
+
+  .step-card-title {
+    font-size: 1.4rem;
+  }
+
+  .step-card-desc {
+    font-size: 0.95rem;
+  }
+}
