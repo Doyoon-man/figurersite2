@@ -166,36 +166,31 @@
   position: absolute;
   bottom: 45px; /* 핀 위에 공중부양 */
   left: 50%;
-  transform: translateX(-50%);
   width: 280px;
-  padding: 24px;
+  padding: 20px 24px;
   z-index: 10;
   text-align: left;
   border-radius: 20px;
-  animation: tooltipFadeUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  
+  /* 마우스 호버 전 기본 숨김 상태 */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(15px);
+  
+  /* 자연스럽고 고급스러운 미크로 인터랙션 트랜지션 */
+  transition: 
+    opacity 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    visibility 0.4s;
 }
 
-/* 닫기 버튼 */
-.tooltip-close-btn {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: none;
-  border: none;
-  color: var(--color-navy-mute);
-  font-size: 0.8rem;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tooltip-close-btn:hover {
+/* 핀에 호버했을 때 툴팁이 자연스럽게 나타남 */
+.hotspot-pin:hover .glass-tooltip-bubble {
   opacity: 1;
-  color: var(--color-lavender-deep);
-  transform: scale(1.1) rotate(90deg);
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
 
 .tooltip-title {
@@ -203,7 +198,6 @@
   font-weight: 700;
   color: var(--color-navy-deep);
   margin-bottom: 8px;
-  padding-right: 12px;
 }
 
 .tooltip-text {
@@ -224,17 +218,6 @@
   border-right: 1px solid var(--glass-border);
   border-bottom: 1px solid var(--glass-border);
   z-index: -1;
-}
-
-@keyframes tooltipFadeUp {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
 }
 
 /* 6. 우측/좌측 스펙 텍스트 설명 */

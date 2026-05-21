@@ -1,16 +1,8 @@
-import { useState } from 'react';
 import './Details.css';
 import chibiImg from '../assets/figures/chibi.png';
 import premiumImg from '../assets/figures/premium.png';
 
 export default function Details() {
-  // 각 섹션의 활성화된 툴팁 상태 관리 (null | tooltipId)
-  const [activeTooltip, setActiveTooltip] = useState(null);
-
-  const toggleTooltip = (id) => {
-    setActiveTooltip(activeTooltip === id ? null : id);
-  };
-
   const detailsData = [
     {
       id: 'detail-face',
@@ -103,8 +95,6 @@ export default function Details() {
 
                   {/* 핫스팟 핀 렌더링 */}
                   {detail.hotspots.map((spot) => {
-                    const isOpen = activeTooltip === spot.id;
-
                     return (
                       <div
                         key={spot.id}
@@ -112,27 +102,19 @@ export default function Details() {
                         style={{ top: spot.top, left: spot.left }}
                       >
                         {/* 맥동하는 핑 이펙트 링 */}
-                        <div className="hotspot-pulse-ring" onClick={() => toggleTooltip(spot.id)}></div>
+                        <div className="hotspot-pulse-ring"></div>
 
                         {/* 핫스팟 터치 센터 */}
-                        <div className="hotspot-core-dot" onClick={() => toggleTooltip(spot.id)}>
+                        <div className="hotspot-core-dot">
                           <span className="plus-sign">+</span>
                         </div>
 
                         {/* IN-03 글래스 툴팁 말풍선 */}
-                        {isOpen && (
-                          <div className="glass-tooltip-bubble glass-panel">
-                            <h4 className="tooltip-title">{spot.title}</h4>
-                            <p className="tooltip-text">{spot.text}</p>
-                            <button
-                              className="tooltip-close-btn"
-                              onClick={() => toggleTooltip(spot.id)}
-                            >
-                              ✕
-                            </button>
-                            <div className="tooltip-arrow"></div>
-                          </div>
-                        )}
+                        <div className="glass-tooltip-bubble glass-panel">
+                          <h4 className="tooltip-title">{spot.title}</h4>
+                          <p className="tooltip-text">{spot.text}</p>
+                          <div className="tooltip-arrow"></div>
+                        </div>
                       </div>
                     );
                   })}
