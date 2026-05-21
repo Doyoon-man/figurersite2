@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import './FigureCarousel.css';
 import fig01 from '../assets/figures/figure-01.jpg';
 import fig02 from '../assets/figures/figure-02.jpg';
@@ -132,7 +133,7 @@ const ReviewModal = ({ figure, onClose }) => {
 
   if (!figure) return null;
 
-  return (
+  return createPortal(
     <div className="review-modal-overlay" onClick={onClose}>
       <div className="review-modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="review-modal-close" onClick={onClose} aria-label="닫기">
@@ -174,7 +175,8 @@ const ReviewModal = ({ figure, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

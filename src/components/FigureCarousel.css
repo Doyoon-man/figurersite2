@@ -395,7 +395,7 @@
 .review-modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999; /* 다른 요소들보다 항상 맨 위에 오도록 수정 */
   background: rgba(13, 17, 39, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
