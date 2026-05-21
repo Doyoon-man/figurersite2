@@ -1,235 +1,239 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <!-- 배경 그라데이션: 딥 네이비 → 미드나잇 퍼플 -->
-    <radialGradient id="bgGrad" cx="50%" cy="55%" r="55%">
-      <stop offset="0%" stop-color="#1a0a35"/>
-      <stop offset="100%" stop-color="#06020f"/>
+    <!-- 배경 그라데이션 -->
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2a2035"/>
+      <stop offset="100%" stop-color="#0f0b18"/>
     </radialGradient>
 
-    <!-- 오로라 글로우 그라데이션 (핑크~시안) -->
-    <radialGradient id="auroraGlow" cx="50%" cy="60%" r="50%">
-      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    <!-- 피부 그라데이션 -->
+    <radialGradient id="skinGrad" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f5ede8"/>
+      <stop offset="100%" stop-color="#e8d5cc"/>
     </radialGradient>
 
-    <!-- 캐릭터 바디 그라데이션 -->
-    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f0abfc"/>
-      <stop offset="40%" stop-color="#c084fc"/>
-      <stop offset="100%" stop-color="#818cf8"/>
+    <!-- 머리카락 그라데이션 -->
+    <linearGradient id="hairGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#4a4a4a"/>
+      <stop offset="50%" stop-color="#2e2e2e"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
     </linearGradient>
 
-    <!-- 캐릭터 하이라이트 그라데이션 -->
-    <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="60%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#e879f9" stop-opacity="0.3"/>
+    <!-- 머리카락 하이라이트 -->
+    <linearGradient id="hairHighlight" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#6a6a6a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3a3a3a" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- 헤어 그라데이션 -->
-    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7c3aed"/>
-      <stop offset="100%" stop-color="#4f46e5"/>
-    </linearGradient>
+    <!-- 눈 그라데이션 (보라) -->
+    <radialGradient id="eyeGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#9b7ec8"/>
+      <stop offset="50%" stop-color="#7c5ba8"/>
+      <stop offset="100%" stop-color="#4a3070"/>
+    </radialGradient>
 
-    <!-- 플리인트 별 그라데이션 -->
-    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+    <!-- 눈 글로우 -->
+    <radialGradient id="eyeGlow" cx="35%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#c9a8e8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7c5ba8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 귀걸이 별 글로우 -->
+    <radialGradient id="starGlowGrad" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="60%" stop-color="#e0e7ff"/>
-      <stop offset="100%" stop-color="#a5b4fc" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#e0d0ff"/>
+      <stop offset="100%" stop-color="#9b7ec8" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- 받침대 그라데이션 -->
-    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4f46e5"/>
-      <stop offset="50%" stop-color="#7c3aed"/>
-      <stop offset="100%" stop-color="#4f46e5"/>
-    </linearGradient>
-
-    <!-- 받침대 하이라이트 -->
-    <linearGradient id="baseHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.4"/>
-    </linearGradient>
-
-    <!-- 글로우 필터 -->
-    <filter id="glowFilter" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- 강한 글로우 필터 -->
-    <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
 
     <!-- 소프트 글로우 필터 -->
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="1" result="blur"/>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="0.8" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- 별 글로우 필터 -->
+    <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 머리카락 그림자 필터 -->
+    <filter id="hairShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- 클립 경로 (얼굴 원형) -->
+    <clipPath id="faceClip">
+      <ellipse cx="32" cy="30" rx="13" ry="14"/>
+    </clipPath>
   </defs>
 
-  <!-- ===== 배경 원형 (모서리 둥근 사각형) ===== -->
+  <!-- ===== 배경 (둥근 사각형) ===== -->
   <rect width="64" height="64" rx="14" ry="14" fill="url(#bgGrad)"/>
 
-  <!-- ===== 오로라 배경 글로우 ===== -->
-  <ellipse cx="32" cy="44" rx="22" ry="14" fill="url(#auroraGlow)" opacity="0.8"/>
+  <!-- 배경 미묘한 노이즈 텍스처 느낌 (회색 원) -->
+  <circle cx="32" cy="32" r="30" fill="#1c1525" opacity="0.4"/>
 
-  <!-- ===== 홀로그래픽 링 이펙트 (아랫부분) ===== -->
-  <ellipse cx="32" cy="50" rx="16" ry="4" fill="none" stroke="#d946ef" stroke-width="0.5" opacity="0.5"/>
-  <ellipse cx="32" cy="50" rx="12" ry="3" fill="none" stroke="#818cf8" stroke-width="0.4" opacity="0.4"/>
+  <!-- ===== 목 ===== -->
+  <rect x="27" y="43" width="10" height="10" rx="2" fill="url(#skinGrad)"/>
+  <!-- 목 그림자 -->
+  <rect x="27" y="43" width="10" height="4" rx="1" fill="#d4bfb8" opacity="0.5"/>
 
-  <!-- ===== 피규어 받침대 ===== -->
-  <!-- 받침대 메인 -->
-  <ellipse cx="32" cy="54" rx="13" ry="3.5" fill="url(#baseGrad)" opacity="0.9"/>
-  <!-- 받침대 상단 하이라이트 -->
-  <ellipse cx="32" cy="53" rx="11" ry="2.2" fill="url(#baseHighlight)"/>
-  <!-- 받침대 측면 깊이감 -->
-  <path d="M19 54 L19 56 Q32 59 45 56 L45 54" fill="#2d1b69" opacity="0.7"/>
-  <!-- 받침대 하단 -->
-  <ellipse cx="32" cy="56" rx="13" ry="3" fill="#1e1155" opacity="0.5"/>
+  <!-- ===== 옷 (블랙 탑) ===== -->
+  <path d="M12 64 Q16 50 27 48 L32 52 L37 48 Q48 50 52 64 Z" fill="#1a1a1a"/>
+  <!-- 옷 하이라이트 -->
+  <path d="M27 48 L32 52 L37 48 Q38 50 37 52 L32 55 L27 52 Q26 50 27 48Z" fill="#2a2a2a" opacity="0.7"/>
 
-  <!-- ===== 치비 캐릭터 실루엣 ===== -->
+  <!-- 어깨 라인 -->
+  <path d="M14 64 Q18 54 28 50" stroke="#111" stroke-width="0.5" fill="none" opacity="0.5"/>
+  <path d="M50 64 Q46 54 36 50" stroke="#111" stroke-width="0.5" fill="none" opacity="0.5"/>
 
-  <!-- 발 / 신발 -->
-  <ellipse cx="27.5" cy="51.5" rx="4" ry="2" fill="#6d28d9" filter="url(#softGlow)"/>
-  <ellipse cx="36.5" cy="51.5" rx="4" ry="2" fill="#6d28d9" filter="url(#softGlow)"/>
-  <!-- 신발 하이라이트 -->
-  <ellipse cx="26.5" cy="51" rx="2" ry="0.8" fill="#a78bfa" opacity="0.7"/>
-  <ellipse cx="35.5" cy="51" rx="2" ry="0.8" fill="#a78bfa" opacity="0.7"/>
+  <!-- ===== 얼굴 베이스 ===== -->
+  <ellipse cx="32" cy="30" rx="13" ry="14" fill="url(#skinGrad)"/>
 
-  <!-- 다리 -->
-  <rect x="25" y="44" width="5" height="8" rx="2.5" fill="url(#bodyGrad)"/>
-  <rect x="34" y="44" width="5" height="8" rx="2.5" fill="url(#bodyGrad)"/>
+  <!-- 얼굴 측면 그림자 (입체감) -->
+  <ellipse cx="20" cy="30" rx="4" ry="8" fill="#c9a898" opacity="0.25"/>
+  <ellipse cx="44" cy="30" rx="4" ry="8" fill="#c9a898" opacity="0.2"/>
 
-  <!-- 스커트/하의 -->
-  <path d="M22 43 Q24 50 28 50 L36 50 Q40 50 42 43 Z" fill="#7c3aed" opacity="0.9"/>
-  <path d="M22 43 Q24 50 28 50 L36 50 Q40 50 42 43 Z" fill="url(#highlightGrad)" opacity="0.4"/>
-  <!-- 스커트 하단 레이스 -->
-  <path d="M23 49 Q27 51 32 50 Q37 51 41 49" fill="none" stroke="#c4b5fd" stroke-width="0.7" opacity="0.8"/>
+  <!-- ===== 귀 ===== -->
+  <!-- 오른쪽 귀 (오른편) -->
+  <ellipse cx="45" cy="30" rx="2.5" ry="3.5" fill="#edd8cc"/>
+  <ellipse cx="45.5" cy="30" rx="1.5" ry="2.2" fill="#e0c5ba"/>
 
-  <!-- 몸통 -->
-  <rect x="25" y="32" width="14" height="13" rx="4" fill="url(#bodyGrad)"/>
-  <!-- 몸통 하이라이트 -->
-  <rect x="26" y="33" width="6" height="6" rx="3" fill="url(#highlightGrad)" opacity="0.6"/>
-  <!-- 리본/장식 (가슴 중앙) -->
-  <path d="M29 37 L32 39 L35 37 L32 35 Z" fill="#f0abfc" filter="url(#softGlow)"/>
+  <!-- 왼쪽 귀 -->
+  <ellipse cx="19" cy="30" rx="2.5" ry="3.5" fill="#edd8cc"/>
+  <ellipse cx="18.5" cy="30" rx="1.5" ry="2.2" fill="#e0c5ba"/>
 
-  <!-- 왼팔 (살짝 들린 포즈) -->
-  <path d="M25 34 Q20 30 21 25" stroke="url(#bodyGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <!-- 왼손 -->
-  <circle cx="21" cy="24" r="3" fill="url(#bodyGrad)"/>
+  <!-- ===== 별 귀걸이 (오른쪽 귀 아래) ===== -->
+  <g filter="url(#starGlow)" transform="translate(45, 35)">
+    <!-- 귀걸이 작은 원 -->
+    <circle cx="0" cy="-1" r="1.2" fill="#ccc" stroke="#aaa" stroke-width="0.3"/>
+    <!-- 별 -->
+    <polygon points="0,-3.5 0.8,-1.3 3,-1.3 1.3,0.2 1.9,2.4 0,1.1 -1.9,2.4 -1.3,0.2 -3,-1.3 -0.8,-1.3"
+      fill="url(#starGlowGrad)" transform="scale(0.85) translate(0, 2)"/>
+    <!-- 별 외곽선 -->
+    <polygon points="0,-3 0.7,-1.1 2.6,-1.1 1.1,0.1 1.7,2.1 0,0.9 -1.7,2.1 -1.1,0.1 -2.6,-1.1 -0.7,-1.1"
+      fill="none" stroke="#d0c0ff" stroke-width="0.3" opacity="0.7" transform="scale(0.85) translate(0, 2)"/>
+  </g>
 
-  <!-- 오른팔 (살짝 들린 포즈) -->
-  <path d="M39 34 Q44 30 43 25" stroke="url(#bodyGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <!-- 오른손 -->
-  <circle cx="43" cy="24" r="3" fill="url(#bodyGrad)"/>
-
-  <!-- ===== 머리 ===== -->
-  <!-- 머리 글로우 -->
-  <circle cx="32" cy="24" r="11" fill="#7c3aed" opacity="0.15" filter="url(#glowFilter)"/>
-  <!-- 머리 메인 -->
-  <circle cx="32" cy="24" r="9.5" fill="url(#bodyGrad)"/>
-  <!-- 얼굴 하이라이트 -->
-  <ellipse cx="29" cy="21" rx="4" ry="3" fill="white" opacity="0.25"/>
-
-  <!-- ===== 헤어 ===== -->
-  <!-- 앞머리 -->
-  <path d="M22.5 22 Q23 14 32 13 Q41 14 41.5 22 Q39 18 32 17.5 Q25 18 22.5 22 Z" fill="url(#hairGrad)"/>
-  <!-- 옆머리 왼쪽 -->
-  <path d="M22.5 22 Q19 24 20 30 Q22 28 23 26 Z" fill="url(#hairGrad)"/>
-  <!-- 옆머리 오른쪽 -->
-  <path d="M41.5 22 Q45 24 44 30 Q42 28 41 26 Z" fill="url(#hairGrad)"/>
+  <!-- ===== 머리카락 (뒷부분) ===== -->
   <!-- 뒷머리 -->
-  <path d="M23 24 Q22 33 27 34" stroke="#4f46e5" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <path d="M41 24 Q42 33 37 34" stroke="#4f46e5" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <!-- 헤어 하이라이트 -->
-  <path d="M26 15 Q30 13 34 14" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <ellipse cx="32" cy="22" rx="15" ry="15" fill="url(#hairGrad)" filter="url(#hairShadow)"/>
+  <!-- 뒷머리 왼쪽 흘러내림 -->
+  <path d="M18 20 Q13 28 15 40 Q18 35 20 30" fill="url(#hairGrad)"/>
+  <!-- 뒷머리 오른쪽 흘러내림 -->
+  <path d="M46 20 Q51 28 49 40 Q46 35 44 30" fill="url(#hairGrad)"/>
 
-  <!-- 헤어 장식 (별 핀) -->
-  <polygon points="21,16 21.8,18.4 24.4,18.4 22.3,19.9 23.1,22.3 21,20.8 18.9,22.3 19.7,19.9 17.6,18.4 20.2,18.4"
-    fill="#fbbf24" filter="url(#strongGlow)" transform="scale(0.55) translate(17, 10)"/>
+  <!-- ===== 얼굴 다시 그리기 (머리카락 위에) ===== -->
+  <ellipse cx="32" cy="30" rx="12.5" ry="13" fill="url(#skinGrad)"/>
 
-  <!-- ===== 얼굴 특징 ===== -->
-  <!-- 눈 (큰 애니메이션 눈) -->
+  <!-- 귀 다시 (머리카락 위에) -->
+  <ellipse cx="44.5" cy="30" rx="2.2" ry="3" fill="#edd8cc"/>
+  <ellipse cx="19.5" cy="30" rx="2.2" ry="3" fill="#edd8cc"/>
+
+  <!-- 귀 내부 -->
+  <ellipse cx="44.8" cy="30" rx="1.2" ry="1.8" fill="#e0c5ba"/>
+  <ellipse cx="19.2" cy="30" rx="1.2" ry="1.8" fill="#e0c5ba"/>
+
+  <!-- ===== 앞머리 ===== -->
+  <!-- 앞머리 메인 -->
+  <path d="M19 23 Q20 12 32 11 Q44 12 45 23 Q41 18 36 17 Q32 16 28 17 Q23 18 19 23 Z"
+    fill="url(#hairGrad)"/>
+  <!-- 앞머리 하이라이트 -->
+  <path d="M22 18 Q28 13 37 15 Q30 13 22 18Z" fill="url(#hairHighlight)" opacity="0.7"/>
+
+  <!-- 앞머리 결 (얼굴 위로 내려오는 머리카락) -->
+  <!-- 왼쪽 사이드 뱅 -->
+  <path d="M19 23 Q17 28 18 35 Q20 30 21 25" fill="url(#hairGrad)"/>
+  <!-- 오른쪽 사이드 뱅 -->
+  <path d="M45 23 Q47 28 46 35 Q44 30 43 25" fill="url(#hairGrad)"/>
+
+  <!-- 뱅 앞머리 개별 가닥 -->
+  <path d="M24 15 Q22 20 23 26" stroke="#3a3a3a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M28 13 Q27 19 28 24" stroke="#3a3a3a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M32 12 Q32 18 32 23" stroke="#3a3a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M36 13 Q37 19 36 24" stroke="#3a3a3a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M40 15 Q42 20 41 26" stroke="#3a3a3a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 앞머리 앞 레이어 (진하게) -->
+  <path d="M24 17 Q21 22 22 28 Q24 24 25 20Z" fill="#2a2a2a" opacity="0.6"/>
+  <path d="M40 17 Q43 22 42 28 Q40 24 39 20Z" fill="#2a2a2a" opacity="0.6"/>
+
+  <!-- ===== 눈썹 ===== -->
+  <!-- 왼쪽 눈썹 (약간 인상있게) -->
+  <path d="M22 23.5 Q25.5 21.5 28.5 22.5" stroke="#2e2e2e" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- 오른쪽 눈썹 -->
+  <path d="M35.5 22.5 Q38.5 21.5 42 23.5" stroke="#2e2e2e" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+  <!-- ===== 눈 ===== -->
+  <!-- 눈 외곽 (상단 눈꺼풀 라인) -->
   <!-- 왼쪽 눈 -->
-  <ellipse cx="28.5" cy="24" rx="2.5" ry="2.8" fill="#1e1155"/>
-  <ellipse cx="28.5" cy="24" rx="1.8" ry="2" fill="#6d28d9"/>
-  <ellipse cx="28.5" cy="24" rx="1.2" ry="1.5" fill="#0ea5e9"/>
-  <circle cx="28.5" cy="24" r="0.5" fill="#0a0a1a"/>
-  <!-- 왼쪽 눈 하이라이트 -->
-  <circle cx="27.7" cy="22.8" r="0.7" fill="white" opacity="0.9"/>
-  <circle cx="29.2" cy="25" r="0.4" fill="white" opacity="0.5"/>
+  <path d="M22 27 Q25 25.5 29 27 Q28 31 25.5 31.5 Q23 31 22 27Z" fill="#1a1a1a"/>
+  <ellipse cx="25.5" cy="28.5" rx="3" ry="2.8" fill="url(#eyeGrad)"/>
+  <ellipse cx="25.5" cy="28.5" rx="2" ry="2" fill="url(#eyeGlow)" opacity="0.8"/>
+  <!-- 동공 -->
+  <circle cx="25.5" cy="28.8" r="1.2" fill="#1a0a28"/>
+  <!-- 눈 하이라이트 -->
+  <circle cx="24.5" cy="27.5" r="0.9" fill="white" opacity="0.95"/>
+  <circle cx="26.8" cy="29.8" r="0.5" fill="white" opacity="0.5"/>
+  <!-- 눈꺼풀 라인 -->
+  <path d="M22 27 Q25.5 25 29 27" stroke="#1a1a1a" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <!-- 속눈썹 -->
+  <line x1="22.5" y1="27.2" x2="21.8" y2="26" stroke="#1a1a1a" stroke-width="0.5" stroke-linecap="round"/>
+  <line x1="28.5" y1="27.2" x2="29.3" y2="26" stroke="#1a1a1a" stroke-width="0.5" stroke-linecap="round"/>
+  <!-- 하단 눈꺼풀 -->
+  <path d="M22.5 29.5 Q25.5 31.5 28.5 29.5" stroke="#9b7ec8" stroke-width="0.4" fill="none" opacity="0.6"/>
 
   <!-- 오른쪽 눈 -->
-  <ellipse cx="35.5" cy="24" rx="2.5" ry="2.8" fill="#1e1155"/>
-  <ellipse cx="35.5" cy="24" rx="1.8" ry="2" fill="#6d28d9"/>
-  <ellipse cx="35.5" cy="24" rx="1.2" ry="1.5" fill="#0ea5e9"/>
-  <circle cx="35.5" cy="24" r="0.5" fill="#0a0a1a"/>
-  <!-- 오른쪽 눈 하이라이트 -->
-  <circle cx="34.7" cy="22.8" r="0.7" fill="white" opacity="0.9"/>
-  <circle cx="36.2" cy="25" r="0.4" fill="white" opacity="0.5"/>
+  <path d="M35 27 Q38.5 25.5 42 27 Q41 31 38.5 31.5 Q36 31 35 27Z" fill="#1a1a1a"/>
+  <ellipse cx="38.5" cy="28.5" rx="3" ry="2.8" fill="url(#eyeGrad)"/>
+  <ellipse cx="38.5" cy="28.5" rx="2" ry="2" fill="url(#eyeGlow)" opacity="0.8"/>
+  <!-- 동공 -->
+  <circle cx="38.5" cy="28.8" r="1.2" fill="#1a0a28"/>
+  <!-- 눈 하이라이트 -->
+  <circle cx="37.5" cy="27.5" r="0.9" fill="white" opacity="0.95"/>
+  <circle cx="39.8" cy="29.8" r="0.5" fill="white" opacity="0.5"/>
+  <!-- 눈꺼풀 라인 -->
+  <path d="M35 27 Q38.5 25 42 27" stroke="#1a1a1a" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <!-- 속눈썹 -->
+  <line x1="35.5" y1="27.2" x2="34.8" y2="26" stroke="#1a1a1a" stroke-width="0.5" stroke-linecap="round"/>
+  <line x1="41.5" y1="27.2" x2="42.3" y2="26" stroke="#1a1a1a" stroke-width="0.5" stroke-linecap="round"/>
+  <!-- 하단 눈꺼풀 -->
+  <path d="M35.5 29.5 Q38.5 31.5 41.5 29.5" stroke="#9b7ec8" stroke-width="0.4" fill="none" opacity="0.6"/>
 
-  <!-- 눈썹 -->
-  <path d="M26.5 21 Q28.5 20 30 21" stroke="#4f46e5" stroke-width="0.8" fill="none" stroke-linecap="round"/>
-  <path d="M33 21 Q34.5 20 36.5 21" stroke="#4f46e5" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <!-- ===== 코 ===== -->
+  <path d="M31.5 33 Q32 34 32.5 33" stroke="#c9a898" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.7"/>
 
-  <!-- 입 (작은 미소) -->
-  <path d="M30 27.5 Q32 29 34 27.5" stroke="#c084fc" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <!-- ===== 입 (잔잔한 미소) ===== -->
+  <path d="M28.5 37 Q32 39 35.5 37" stroke="#c08080" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <!-- 아랫입술 볼륨 -->
+  <path d="M29.5 37.5 Q32 39.5 34.5 37.5" stroke="#d4a0a0" stroke-width="0.5" fill="none" stroke-linecap="round" opacity="0.5"/>
 
-  <!-- 볼 홍조 -->
-  <ellipse cx="26.5" cy="26.5" rx="2.5" ry="1.2" fill="#f472b6" opacity="0.35"/>
-  <ellipse cx="37.5" cy="26.5" rx="2.5" ry="1.2" fill="#f472b6" opacity="0.35"/>
+  <!-- ===== 볼 홍조 ===== -->
+  <ellipse cx="21.5" cy="33" rx="3.5" ry="1.5" fill="#f0a0a0" opacity="0.2"/>
+  <ellipse cx="42.5" cy="33" rx="3.5" ry="1.5" fill="#f0a0a0" opacity="0.2"/>
 
-  <!-- ===== 반짝이 / 파티클 이펙트 ===== -->
-  <!-- 큰 별 (오른쪽 위) -->
-  <g filter="url(#strongGlow)" transform="translate(47, 8)">
-    <polygon points="0,-4 1,-1.5 3.8,-1.5 1.6,0.6 2.4,3.4 0,1.8 -2.4,3.4 -1.6,0.6 -3.8,-1.5 -1,-1.5"
-      fill="#fbbf24" opacity="0.9"/>
+  <!-- ===== 별 귀걸이 재렌더 (맨 위에) ===== -->
+  <g filter="url(#starGlow)">
+    <!-- 귀걸이 줄 -->
+    <line x1="45" y1="33" x2="45" y2="36" stroke="#aaa" stroke-width="0.5"/>
+    <!-- 별 귀걸이 -->
+    <polygon points="45,36 45.5,37.5 47,37.5 45.9,38.5 46.3,40 45,39.1 43.7,40 44.1,38.5 43,37.5 44.5,37.5"
+      fill="white" opacity="0.95"/>
+    <polygon points="45,36 45.5,37.5 47,37.5 45.9,38.5 46.3,40 45,39.1 43.7,40 44.1,38.5 43,37.5 44.5,37.5"
+      fill="#d0c8ff" opacity="0.5"/>
   </g>
 
-  <!-- 중간 별 (왼쪽 위) -->
-  <g filter="url(strongGlow)" transform="translate(10, 12)">
-    <polygon points="0,-3 0.9,-1.1 3,-1.1 1.5,0.5 2.1,2.6 0,1.4 -2.1,2.6 -1.5,0.5 -3,-1.1 -0.9,-1.1"
-      fill="#e879f9" opacity="0.85"/>
-  </g>
+  <!-- ===== 테두리 (둥근 사각형) ===== -->
+  <rect width="64" height="64" rx="14" ry="14" fill="none" stroke="#5a4070" stroke-width="1.5" opacity="0.6"/>
 
-  <!-- 작은 별들 -->
-  <circle cx="50" cy="20" r="1.2" fill="#67e8f9" opacity="0.8" filter="url(#softGlow)"/>
-  <circle cx="8" cy="28" r="1" fill="#a78bfa" opacity="0.7" filter="url(#softGlow)"/>
-  <circle cx="55" cy="35" r="0.8" fill="#f0abfc" opacity="0.8" filter="url(#softGlow)"/>
-  <circle cx="5" cy="45" r="0.7" fill="#67e8f9" opacity="0.6" filter="url(#softGlow)"/>
-
-  <!-- 반짝 십자 이펙트 (왼쪽 손 근처) -->
-  <g transform="translate(18, 22)" opacity="0.9" filter="url(#softGlow)">
-    <line x1="0" y1="-3" x2="0" y2="3" stroke="#fde68a" stroke-width="0.6" stroke-linecap="round"/>
-    <line x1="-3" y1="0" x2="3" y2="0" stroke="#fde68a" stroke-width="0.6" stroke-linecap="round"/>
-    <line x1="-2" y1="-2" x2="2" y2="2" stroke="#fde68a" stroke-width="0.3" stroke-linecap="round"/>
-    <line x1="2" y1="-2" x2="-2" y2="2" stroke="#fde68a" stroke-width="0.3" stroke-linecap="round"/>
-  </g>
-
-  <!-- 반짝 십자 이펙트 (오른쪽 손 근처) -->
-  <g transform="translate(46, 22)" opacity="0.85" filter="url(#softGlow)">
-    <line x1="0" y1="-2.5" x2="0" y2="2.5" stroke="#c4b5fd" stroke-width="0.6" stroke-linecap="round"/>
-    <line x1="-2.5" y1="0" x2="2.5" y2="0" stroke="#c4b5fd" stroke-width="0.6" stroke-linecap="round"/>
-  </g>
-
-  <!-- ===== 홀로그래픽 오버레이 (전체 위에 미세한 광택) ===== -->
-  <rect width="64" height="64" rx="14" ry="14"
-    fill="none" stroke="url(#bodyGrad)" stroke-width="1.5" opacity="0.3"/>
-
-  <!-- 상단 좌측 빛 반사 -->
-  <ellipse cx="16" cy="12" rx="8" ry="5" fill="white" opacity="0.04" transform="rotate(-20 16 12)"/>
+  <!-- 모서리 미세한 빛 반사 -->
+  <path d="M14 2 Q2 2 2 14" stroke="white" stroke-width="0.8" fill="none" opacity="0.15" stroke-linecap="round"/>
 </svg>
