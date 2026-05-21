@@ -1,5 +1,4 @@
 import './Hero.css';
-import { useState, useCallback } from 'react';
 import FigureCarousel from './FigureCarousel';
 import prayelfFigure from '../assets/figures/prayelf-figure.jpg';
 import prayelfIllust from '../assets/figures/prayelf-illust.jpg';
@@ -29,7 +28,6 @@ const renderWavyText = (text, startIdx, isGradient = false) => {
         className="wavy-char"
         style={{
           ...gradientStyle,
-          '--char-index': globalIdx,
           animationDelay: `${globalIdx * 0.04}s`,
         }}
       >
@@ -40,10 +38,6 @@ const renderWavyText = (text, startIdx, isGradient = false) => {
 };
 
 export default function Hero() {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
-  const handleMouseLeave = useCallback(() => setIsHovered(false), []);
 
   return (
     <section className="hero-section" id="hero">
@@ -54,11 +48,7 @@ export default function Hero() {
           <div className="badge-wrapper">
             <span className="premium-badge">1:1 Premium Customizing</span>
           </div>
-          <h1
-            className={`hero-headline${isHovered ? ' hero-headline--hovered' : ''}`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
+          <h1 className="hero-headline">
             <span className="wavy-line">
               {renderWavyText("내가 그린 캐릭터", 0)}
             </span>

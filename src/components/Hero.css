@@ -84,6 +84,13 @@
   transform: translateY(24px);
   animation: waveEffect 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   -webkit-animation: waveEffect 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+  cursor: default;
+}
+
+.wavy-char:hover {
+  transform: translateY(-10px);
 }
 
 @keyframes waveEffect {
@@ -96,20 +103,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* =========================================
-   hero-headline hover 연출: 글자 하나하나 위로 튀기
-   ========================================= */
-@keyframes charBounceUp {
-  0%   { transform: translateY(0); }
-  40%  { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-.hero-headline--hovered .wavy-char {
-  animation: charBounceUp 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation-delay: calc(var(--char-index, 0) * 0.04s);
 }
 
 
