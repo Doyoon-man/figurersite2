@@ -70,7 +70,7 @@ export default function Details() {
         <div className="details-header">
           <span className="section-subtitle">Exquisite Details</span>
           <h2 className="title-jalnan details-main-title">
-            돋보기로 들여다보고 싶은 <br />
+            돋보기로 들여다보고 싶은 <br className="pc-only" />
             <span className="gradient-text">장인 정신의 극상 퀄리티</span>
           </h2>
           <p className="details-intro">
