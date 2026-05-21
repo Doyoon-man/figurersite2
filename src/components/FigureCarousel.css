@@ -181,13 +181,13 @@
   border: 1.5px solid rgba(184, 166, 255, 0.25);
 
   box-shadow:
-    0 2px 8px rgba(13, 17, 39, 0.04),
-    0 6px 24px rgba(142, 124, 239, 0.09),
+    0 4px 12px rgba(13, 17, 39, 0.04),
+    0 6px 20px rgba(142, 124, 239, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
   transition:
-    transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.38s ease,
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.45s ease,
     border-color 0.3s ease;
   will-change: transform, box-shadow;
   position: relative;
@@ -195,11 +195,14 @@
 
 /* 호버 시 카드 상승 + 오로라 광채 */
 .figure-card:hover .figure-card__inner {
-  transform: translateY(-10px) scale(1.04);
+  transform: translateY(-8px) scale(1.03);
   border-color: rgba(184, 166, 255, 0.5);
   box-shadow:
-    0 20px 50px rgba(142, 124, 239, 0.25),
-    0 8px 20px rgba(255, 158, 202, 0.12),
+    0 20px 45px rgba(13, 17, 39, 0.18),
+    0 8px 20px rgba(142, 124, 239, 0.15),
+    0 0 0 1px rgba(184, 166, 255, 0.35),
+    0 0 40px rgba(184, 166, 255, 0.25),
+    0 0 20px rgba(255, 158, 202, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
@@ -433,12 +436,13 @@
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  transition: all 0.2s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, color 0.3s ease;
 }
 
 .review-modal-close:hover {
   background: rgba(0, 0, 0, 0.1);
-  transform: scale(1.1);
+  color: var(--color-lavender-deep);
+  transform: scale(1.1) rotate(90deg);
 }
 
 .review-modal-header {

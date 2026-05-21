@@ -190,14 +190,16 @@
 }
 
 .link-list a {
+  display: inline-block;
   font-size: 0.95rem;
   color: var(--color-navy-mute);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
 }
 
 .link-list a:hover {
   color: var(--color-lavender-deep);
+  transform: translateX(4px);
 }
 
 .contact-item {
