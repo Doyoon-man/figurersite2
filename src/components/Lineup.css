@@ -202,29 +202,7 @@
   margin-top: 40px;
 }
 
-/* 피규어 하단 홀로그램 링 */
-.hologram-stage-ring {
-  position: absolute;
-  bottom: 10%;
-  width: 160px;
-  height: 35px;
-  border-radius: 50%;
-  border: 3px solid rgba(184, 166, 255, 0.3);
-  background: radial-gradient(circle, rgba(124, 226, 255, 0.2) 0%, transparent 80%);
-  transform: rotateX(75deg);
-  opacity: 0.4;
-  transition: all 0.6s ease;
-  z-index: 1;
-}
 
-.split-slot.active .hologram-stage-ring {
-  opacity: 1;
-  border-color: rgba(184, 166, 255, 0.8);
-  box-shadow:
-    0 0 20px rgba(124, 226, 255, 0.6),
-    inset 0 0 15px rgba(255, 158, 202, 0.6);
-  animation: rotateRing 6s infinite linear;
-}
 
 /* 피규어 목업 이미지 및 360도 스핀 인터랙션 */
 .figure-mockup-img {
@@ -261,15 +239,7 @@
 }
 
 /* 6. 모션 키프레임 */
-@keyframes rotateRing {
-  from {
-    transform: rotateX(75deg) rotateZ(0deg);
-  }
 
-  to {
-    transform: rotateX(75deg) rotateZ(360deg);
-  }
-}
 
 @keyframes ufoFloat {
   0% {
@@ -360,8 +330,5 @@
     max-height: 160px;
   }
 
-  .hologram-stage-ring {
-    bottom: 10%;
-    width: 120px;
-  }
+
 }

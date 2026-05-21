@@ -87,8 +87,7 @@ export default function Lineup() {
 
                 {/* 피규어 목업 3D 드로잉 영역 */}
                 <div className="slot-visual-panel">
-                  {/* 회전하는 입체 오로라 링 */}
-                  <div className="hologram-stage-ring"></div>
+
 
                   {/* 피규어 이미지 */}
                   <img
