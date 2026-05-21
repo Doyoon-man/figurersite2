@@ -179,6 +179,11 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  background: rgba(255, 255, 255, 0.82); /* 투명도를 45%에서 82%로 조절하여 덜 투명하게 함 */
+  backdrop-filter: blur(20px); /* 더 뽀얗고 흐린 글래스 효과를 위해 블러 값 상향 */
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 15px 35px rgba(13, 17, 39, 0.1);
   transition:
     opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
     transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -198,6 +203,7 @@
   z-index: 15;
   transform: translateX(-50%) translateY(-4px) scale(1.05);
   box-shadow: 0 12px 32px rgba(142, 124, 239, 0.5);
+  background: rgba(255, 255, 255, 0.92); /* 개별 호버 시에는 더 선명하고 또렷하게 */
   border-color: var(--color-lavender-deep);
 }
 
@@ -222,10 +228,16 @@
   transform: translateX(-50%) rotate(45deg);
   width: 16px;
   height: 16px;
-  background: var(--glass-bg);
-  border-right: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.82); /* 툴팁 버블과 일치 */
+  border-right: 1px solid rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
   z-index: -1;
+  transition: background 0.4s ease;
+}
+
+/* 개별 핀 호버 시 화살표 색상도 동기화 */
+.hotspot-pin:hover .glass-tooltip-bubble .tooltip-arrow {
+  background: rgba(255, 255, 255, 0.92);
 }
 
 
