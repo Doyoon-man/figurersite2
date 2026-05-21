@@ -1,37 +1,42 @@
 import './FigureCarousel.css';
+import fig01 from '../assets/figures/figure-01.jpg';
+import fig02 from '../assets/figures/figure-02.jpg';
+import fig03 from '../assets/figures/figure-03.jpg';
+import fig04 from '../assets/figures/figure-04.jpg';
+import fig05 from '../assets/figures/figure-05.jpg';
 
 /* ─── 피규어 데이터 ─── */
 const figures = [
   {
-    src: '/figures/figure-01.jpg',
+    src: fig01,
     name: 'Divine Divinity',
     sub: '신성 여신 시리즈',
     label: 'NEW',
     stars: 5,
   },
   {
-    src: '/figures/figure-02.jpg',
+    src: fig02,
     name: 'Rose Princess',
     sub: '로즈 프린세스 시리즈',
     label: 'LIMITED',
     stars: 5,
   },
   {
-    src: '/figures/figure-03.jpg',
+    src: fig03,
     name: 'Moon Goddess',
     sub: '달의 여신 시리즈',
     label: 'HOT',
     stars: 4,
   },
   {
-    src: '/figures/figure-04.jpg',
+    src: fig04,
     name: 'Sunny Garden',
     sub: '치비 가든 시리즈',
     label: 'NEW',
     stars: 5,
   },
   {
-    src: '/figures/figure-05.jpg',
+    src: fig05,
     name: 'Cyber Hacker',
     sub: '사이버펑크 시리즈',
     label: 'SOLD OUT',

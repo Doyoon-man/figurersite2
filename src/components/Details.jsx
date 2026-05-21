@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './Details.css';
+import chibiImg from '../assets/figures/chibi.png';
+import premiumImg from '../assets/figures/premium.png';
 
 export default function Details() {
   // 각 섹션의 활성화된 툴팁 상태 관리 (null | tooltipId)
@@ -15,7 +17,7 @@ export default function Details() {
       title: '미세 정밀 데칼과 수공예 눈매',
       desc: '피규어의 생명은 눈매에 있습니다. 0.05mm 두께의 초정밀 실크스크린 데칼을 수차례 레이어링한 후, 전문 아티스트가 수작업으로 투명 하이라이트 코팅을 마감하여 어느 각도에서나 초롱초롱하게 살아있는 시선을 완성합니다.',
       zoomClass: 'zoom-face', // chibi.png 활용
-      imagePath: '/chibi.png',
+      imagePath: chibiImg,
       bullets: [
         '100% 핸드페인팅 한정 공정',
         '정교한 디테일 표현',
@@ -43,7 +45,7 @@ export default function Details() {
       title: '캐릭터가 어떤 옷을 입더라도 정교하게',
       desc: '복잡하거나 단순한 옷일지라도 캐릭터의 분위기에 맞는 색감과 톤앤매너로 의상을 표현합니다. 아름다운 색감과 질감은 고급스럽고 퀄리티 높은 입체감을 자랑합니다.',
       zoomClass: 'zoom-dress', // premium.png 활용
-      imagePath: '/premium.png',
+      imagePath: premiumImg,
       bullets: [
         '캐릭터 원화 100% 재현',
         '실크·메탈릭 등 다양한 재질 표현',

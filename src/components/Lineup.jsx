@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './Lineup.css';
+import chibiImg from '../assets/figures/chibi.png';
+import premiumImg from '../assets/figures/premium.png';
 
 export default function Lineup() {
   const [hoveredSlot, setHoveredSlot] = useState(null);
@@ -12,7 +14,7 @@ export default function Lineup() {
       desc: '2.5등신의 앙증맞은 비율로 캐릭터의 귀여움을 극대화한 아기자기한 라인업입니다. 책상 위, 모니터 아래 등 일상의 공간에 부담 없이 올려두기 좋습니다.',
       scale: '높이 약 8cm ~ 10cm',
       material: '프리미엄 무광 코팅 레진',
-      imgSrc: '/chibi.png',
+      imgSrc: chibiImg,
       price: '180,000원 ~'
     },
     {
@@ -22,7 +24,7 @@ export default function Lineup() {
       desc: '자작 캐릭터 고유의 완벽한 신체 비율과 의상의 복잡한 주름, 휘날리는 머리칼 하나까지 정밀하게 묘사하는 명품 하이엔드 라인업입니다. 수집가를 위한 투명 아크릴 케이스가 기본 제공됩니다.',
       scale: '높이 약 22cm ~ 25cm (1/7 스케일)',
       material: '반투명 오로라 레진 & 유무광 혼합 마감',
-      imgSrc: '/premium.png',
+      imgSrc: premiumImg,
       price: '300,000원 ~'
     }
   ];

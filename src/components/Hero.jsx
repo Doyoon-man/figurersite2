@@ -1,5 +1,7 @@
 import './Hero.css';
 import FigureCarousel from './FigureCarousel';
+import prayelfFigure from '../assets/figures/prayelf-figure.jpg';
+import prayelfIllust from '../assets/figures/prayelf-illust.jpg';
 
 // 한 글자씩 분리하여 애니메이션을 적용하는 헬퍼 함수
 const renderWavyText = (text, startIdx, isGradient = false) => {
@@ -76,12 +78,12 @@ export default function Hero() {
           <div className="visual-background-glow"></div>
           <div className="hero-figure-card" id="hero-figure-card">
             <img
-              src="/prayelf-illust.jpg"
+              src={prayelfIllust}
               alt="Pray Elf 일러스트"
               className="figure-img figure-img--default"
             />
             <img
-              src="/prayelf-figure.jpg"
+              src={prayelfFigure}
               alt="Pray Elf 피규어"
               className="figure-img figure-img--hover"
             />
