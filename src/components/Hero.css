@@ -80,17 +80,17 @@
 
 .wavy-char {
   display: inline-block;
+  position: relative;
+  top: 0;
   opacity: 0;
   transform: translateY(24px);
   animation: waveEffect 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   -webkit-animation: waveEffect 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  will-change: transform;
-  cursor: default;
+  transition: top 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .wavy-char:hover {
-  transform: translateY(-10px);
+  top: -10px;
 }
 
 @keyframes waveEffect {
