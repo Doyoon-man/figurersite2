@@ -166,31 +166,27 @@
   position: absolute;
   bottom: 45px; /* 핀 위에 공중부양 */
   left: 50%;
+  transform: translateX(-50%) translateY(12px) scale(0.95);
   width: 280px;
   padding: 20px 24px;
   z-index: 10;
   text-align: left;
   border-radius: 20px;
-  
-  /* 마우스 호버 전 기본 숨김 상태 */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(-50%) translateY(15px);
-  
-  /* 자연스럽고 고급스러운 미크로 인터랙션 트랜지션 */
   transition: 
-    opacity 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    visibility 0.4s;
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    visibility 0.4s ease;
 }
 
-/* 핀에 호버했을 때 툴팁이 자연스럽게 나타남 */
+/* 핀에 마우스 호버 시 툴팁 자연스럽게 펼쳐짐 */
 .hotspot-pin:hover .glass-tooltip-bubble {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 .tooltip-title {
@@ -219,6 +215,8 @@
   border-bottom: 1px solid var(--glass-border);
   z-index: -1;
 }
+
+
 
 /* 6. 우측/좌측 스펙 텍스트 설명 */
 .detail-text-wrapper {
