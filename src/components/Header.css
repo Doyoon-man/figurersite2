@@ -106,7 +106,7 @@
 }
 
 .header-cta-btn {
-  padding: 8px 20px;
+  padding: 8px 25px;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--color-lavender-deep);
@@ -127,6 +127,7 @@
 /* 4. 모바일 반응형 */
 @media (max-width: 768px) {
   .header-nav {
-    display: none; /* 모바일 가독성을 위해 메뉴 숨김 및 스크롤 유도 */
+    display: none;
+    /* 모바일 가독성을 위해 메뉴 숨김 및 스크롤 유도 */
   }
 }

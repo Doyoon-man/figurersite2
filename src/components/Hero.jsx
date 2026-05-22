@@ -60,8 +60,8 @@ export default function Hero() {
             </span>
           </h1>
           <p className="hero-subcopy">
-            꿈의 드로잉이 세상에 단 하나뿐인 프리미엄 피규어로 탄생합니다.<br />
-            당신의 캐릭터에 담긴 모든 숨결을 입체적으로 해방해 보세요.
+            당신의 캐릭터가 세상에 단 하나뿐인 아름다운 피규어로 탄생합니다.<br />
+            캐릭터의 설정을 기반으로 최고의 디테일을 살려 입체적으로 구현합니다.
           </p>
           <div className="hero-cta-wrapper">
             <a href="#footer-cta" className="btn-aurora">

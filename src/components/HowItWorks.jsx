@@ -67,8 +67,8 @@ export default function HowItWorks() {
         <div className="section-header">
           <span className="section-subtitle">Crafting Process</span>
           <h2 className="title-jalnan section-main-title">
-            자캐가 현실로 다가오는 <br />
-            <span className="gradient-text">세 가지 마법 같은 과정</span>
+            꿈이 현실이 되는 <br />
+            <span className="gradient-text">마법 같은 과정</span>
           </h2>
           <p className="section-description">
             정교함과 감성을 담아 꿈이 담긴 당신의 캐릭터를 영원히 소장하고 싶은 프리미엄 실물 피규어로 빚어냅니다.

@@ -37,8 +37,8 @@ export default function Lineup() {
         <div className="lineup-header">
           <span className="section-subtitle">Premium Line-Up</span>
           <h2 className="title-jalnan lineup-main-title">
-            당신의 캐릭터를 빛낼 <br />
-            <span className="gradient-text">두 가지 예술적 라인업</span>
+            꿈을 현실로 만들 <br />
+            <span className="gradient-text">두 가지의 예술적 라인업들</span>
           </h2>
         </div>
 

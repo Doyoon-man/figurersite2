@@ -185,8 +185,10 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  background: rgba(255, 255, 255, 0.82); /* 투명도를 45%에서 82%로 조절하여 덜 투명하게 함 */
-  backdrop-filter: blur(20px); /* 더 뽀얗고 흐린 글래스 효과를 위해 블러 값 상향 */
+  background: rgba(255, 255, 255, 0.82);
+  /* 투명도를 45%에서 82%로 조절하여 덜 투명하게 함 */
+  backdrop-filter: blur(20px);
+  /* 더 뽀얗고 흐린 글래스 효과를 위해 블러 값 상향 */
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: 0 15px 35px rgba(13, 17, 39, 0.1);
@@ -209,7 +211,8 @@
   z-index: 15;
   transform: translateX(-50%) translateY(-4px) scale(1.05);
   box-shadow: 0 12px 32px rgba(142, 124, 239, 0.5);
-  background: rgba(255, 255, 255, 0.92); /* 개별 호버 시에는 더 선명하고 또렷하게 */
+  background: rgba(255, 255, 255, 0.92);
+  /* 개별 호버 시에는 더 선명하고 또렷하게 */
   border-color: var(--color-lavender-deep);
 }
 
@@ -234,7 +237,8 @@
   transform: translateX(-50%) rotate(45deg);
   width: 16px;
   height: 16px;
-  background: rgba(255, 255, 255, 0.82); /* 툴팁 버블과 일치 */
+  background: rgba(255, 255, 255, 0.82);
+  /* 툴팁 버블과 일치 */
   border-right: 1px solid rgba(255, 255, 255, 0.65);
   border-bottom: 1px solid rgba(255, 255, 255, 0.65);
   z-index: -1;
@@ -327,21 +331,25 @@
 
 @media (max-width: 768px) {
   .pc-only {
-    display: none; /* 태블릿/모바일 기기에서는 줄바꿈을 숨겨서 자연스럽게 흘러가게 합니다 */
+    display: none;
+    /* 태블릿/모바일 기기에서는 줄바꿈을 숨겨서 자연스럽게 흘러가게 합니다 */
   }
 }
 
 @media (max-width: 576px) {
   .details-section {
-    padding: 60px 5%; /* 모바일 환경에 맞게 상하좌우 여백을 조절 */
+    padding: 60px 5%;
+    /* 모바일 환경에 맞게 상하좌우 여백을 조절 */
   }
 
   .details-header {
-    margin-bottom: 50px; /* 모바일에서 지나치게 넓은 공백 제거 */
+    margin-bottom: 50px;
+    /* 모바일에서 지나치게 넓은 공백 제거 */
   }
 
   .details-main-title {
-    font-size: 1.75rem; /* 모바일 기기 화면 폭에 안착되는 수려한 타이틀 크기 */
+    font-size: 1.75rem;
+    /* 모바일 기기 화면 폭에 안착되는 수려한 타이틀 크기 */
     line-height: 1.4;
     margin-bottom: 16px;
   }
@@ -349,7 +357,8 @@
   .details-intro {
     font-size: 0.95rem;
     line-height: 1.6;
-    word-break: keep-all; /* 모바일 환경에서 한글 단어 단위 개행 지원 */
+    word-break: keep-all;
+    /* 모바일 환경에서 한글 단어 단위 개행 지원 */
   }
 
   .detail-visual-wrapper {

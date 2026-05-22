@@ -6,7 +6,7 @@ export default function Details() {
   const detailsData = [
     {
       id: 'detail-face',
-      title: '미세 정밀 데칼과 수공예 눈매',
+      title: '정밀 데칼과 수공예 눈매',
       desc: '피규어의 생명은 눈매에 있습니다. 0.05mm 두께의 초정밀 실크스크린 데칼을 수차례 레이어링한 후, 전문 아티스트가 수작업으로 투명 하이라이트 코팅을 마감하여 어느 각도에서나 초롱초롱하게 살아있는 시선을 완성합니다.',
       zoomClass: 'zoom-face', // chibi.png 활용
       imagePath: chibiImg,
@@ -70,12 +70,12 @@ export default function Details() {
         <div className="details-header">
           <span className="section-subtitle">Exquisite Details</span>
           <h2 className="title-jalnan details-main-title">
-            돋보기로 들여다보고 싶은 <br className="pc-only" />
-            <span className="gradient-text">장인 정신의 극상 퀄리티</span>
+            가까이 다가보고싶은 <br className="pc-only" />
+            <span className="gradient-text">아름다운 퀄리티</span>
           </h2>
           <p className="details-intro">
-            1mm의 흠결도 허용하지 않는 완벽한 완성도.
-            눈으로만 담기 아쉬웠던 디테일들을 현실로 보여드립니다.
+            섬세하게 빚어낸 입체감과 생동감 넘치는 색채 표현으로
+            당신의 캐릭터에 영혼을 불어넣습니다.
           </p>
         </div>
 
