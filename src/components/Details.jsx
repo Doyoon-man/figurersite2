@@ -21,7 +21,7 @@ export default function Details() {
           top: '80%',
           left: '60%',
           title: '고급마감으로 반짝이는 눈매',
-          text: '우레탄 소재를 이용하여 반짝이는 눈매를 표현합니다.'
+          text: '우레탄 소재를 이용하여 내구성 걱정없이 반짝이는 눈매를 표현합니다.'
         },
         {
           id: 'hair-dot',
