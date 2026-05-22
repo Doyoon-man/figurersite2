@@ -99,11 +99,11 @@
 
 /* 호버 시에만 줌업 효과 */
 .detail-visual-wrapper:hover .zoom-face .detail-base-img {
-  transform: scale(2.6) translate(3%, 22%);
+  transform: scale(2.6) translate(-2%, 30%);
 }
 
 .detail-visual-wrapper:hover .zoom-dress .detail-base-img {
-  transform: scale(2.1) translate(-2%, -5%);
+  transform: scale(2.1) translate(-2%, 20%);
 }
 
 /* 4. 맥동하는 핫스팟 핀 (Hotspot Pins) */

@@ -20,8 +20,8 @@ export default function Details() {
           id: 'eye-dot',
           top: '80%',
           left: '60%',
-          title: '고급마감으로 반짝이는 눈매',
-          text: '우레탄 소재를 이용하여 내구성 걱정없이 반짝이는 눈매를 표현합니다.'
+          title: '고급마감으로 걱정없는 내구성',
+          text: '무광코팅레진을 이용하여 내구성 걱정없이 자연스러운 모습을 표현합니다.'
         },
         {
           id: 'hair-dot',
